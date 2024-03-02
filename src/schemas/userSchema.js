@@ -32,7 +32,8 @@ export const userSchema = yup.object().shape({
         .min(7, "Password is too short")
         .max(20, "Password must be no more than 20 characters")
         .matches(passwordRules, {
-            message: "Please create a stronger password",
+            message:
+                "Please create a stronger password. Must contain at least 7 Characters, 1 Uppercase, 1 Lowercase, 1 Number, and 1 Special Case Character",
         })
         .required("Password is required"),
     confirmPassword: yup
